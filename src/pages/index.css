@@ -1,0 +1,33 @@
+@import url(../vendor/normalize.css);
+
+.root {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px;
+  max-width: 1140px;
+}
+
+.handlers-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.shape-color {
+  margin-top: 20px;
+}
+
+.canvas-area {
+  margin-top: 40px;
+}
