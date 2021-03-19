@@ -1,18 +1,17 @@
-let c = document.querySelector('canvas'),
+let cContainer = document.querySelector('.canvas-area')
+let c = cContainer.querySelector('canvas'),
     $ = c.getContext('2d')
-
-
 
 function generateCanvas(){
   // Params
-  let shapeWidth = 20
   let shapeNumber = 30 //Shapers per Row
+  let shapeWidth = cContainer.clientWidth / shapeNumber
   let shapeAmount = Math.pow(shapeNumber, 2)
   let backColor = 'rgb(255, 255, 255)' //BG Color
   let border = 1
-  let borderColor = 'rgba(0,0,0,.4)'
+  let borderColor = 'rgba(0,0,0,.2)'
 
-  let W = H = shapeWidth * shapeNumber
+  let W = H = cContainer.clientWidth
   c.setAttribute('width', W)
   c.setAttribute('height', H)
 
@@ -38,7 +37,7 @@ function generateCanvas(){
 
       x += w
 
-      if (x == W) {
+      if (x >= W - w + 0.001) { //0.001 - погрешность
           y += h
           x = 0
       }
@@ -99,5 +98,6 @@ function generateCanvas(){
     }
   }
 }
+
 
 generateCanvas()
